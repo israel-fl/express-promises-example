@@ -1,7 +1,7 @@
 var bookshelf = require('../bookshelf');
 
 var Author = bookshelf.Model.extend({
-  tableName: 'authors',
+  tableName: 'authors'
 });
 
 module.exports = Author;

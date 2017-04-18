@@ -1,7 +1,7 @@
 var bookshelf = require('../bookshelf');
 
 var Publisher = bookshelf.Model.extend({
-  tableName: 'publishers',
+  tableName: 'publishers'
 });
 
 module.exports = Publisher;

@@ -31,22 +31,23 @@ app.get('/api/v1/reviews', function(request, response) {
 
 
 app.get('/api/v1/books/:id', function(request, response) {
-  Book
-    .where('id', request.params.id)
-    .fetch({
-                require: true,
-                withRelated: ['author', 'publisher']
-            })
-    .then(function(book) {
-      response.json(book);
-    }, function(e) {
-        response.status(404).json({
-            error: {
-              success: false,
-              message: "not_found"
-            }
+
+    Book
+        .where('id', request.params.id)
+        .fetch({
+                    require: true,
+                    withRelated: ['author', 'publisher']
+                })
+        .then(function(book) {
+          response.json(book);
+        }, function(e) {
+            response.status(404).json({
+                error: {
+                  success: false,
+                  message: "not_found"
+                }
+            });
         });
-    });
 });
 
 

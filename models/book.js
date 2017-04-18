@@ -1,13 +1,13 @@
 var bookshelf = require('../bookshelf');
-var Author = require('./author')
-var Publisher = require('./publisher')
+var Author = require('./author');
+var Publisher = require('./publisher');
 
 var Book = bookshelf.Model.extend({
     tableName: 'books',
-    authors: function() {
+    author: function() {
         return this.belongsTo(Author);
     },
-    publishers: function() {
+    publisher: function() {
         return this.belongsTo(Publisher);
     }
 });
